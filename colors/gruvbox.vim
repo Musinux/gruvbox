@@ -131,6 +131,11 @@ let s:gb.faded_purple   = ['#8f3f71', 96]      " 143-63-113
 let s:gb.faded_aqua     = ['#427b58', 66]      " 66-123-88
 let s:gb.faded_orange   = ['#af3a03', 130]     " 175-58-3
 
+let s:gb.highlight_faded_orange = ['#2D0D00', 130]
+let s:gb.highlight_faded_green = ['#183106', 100]
+let s:gb.highlight_faded_aqua = ['#172b1e', 66]
+let s:gb.highlight_faded_yellow = ['#4A2F08', 136]
+
 " }}}
 " Setup Emphasis: {{{
 
@@ -651,14 +656,12 @@ endif
 " }}}
 " Diffs: {{{
 
-call s:HL('DiffDelete', s:red, s:bg0, s:inverse)
-call s:HL('DiffAdd',    s:green, s:bg0, s:inverse)
-"call s:HL('DiffChange', s:bg0, s:blue)
-"call s:HL('DiffText',   s:bg0, s:yellow)
+call s:HL('DiffDelete', s:gb.highlight_faded_orange, s:gb.highlight_faded_orange)
+call s:HL('DiffAdd',    s:none, s:gb.highlight_faded_green)
 
 " Alternative setting
-call s:HL('DiffChange', s:aqua, s:bg0, s:inverse)
-call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
+call s:HL('DiffChange', s:none, s:gb.highlight_faded_aqua)
+call s:HL('DiffText',   s:none, s:gb.highlight_faded_yellow)
 
 " }}}
 " Spelling: {{{
